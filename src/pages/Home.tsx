@@ -9,7 +9,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">دار فساتين · جديدة عرعر</p>
-          <h1>سمية</h1>
+          <h1>سميه</h1>
           <p className="hero-lead">
             فساتين أنيقة بروح أنثوية ناعمة، تُختار بعناية للنساء اللواتي يحببن الحضور الهادئ والفخم.
           </p>
@@ -31,7 +31,7 @@ export function Home() {
           </div>
         </div>
         <div className="hero-visual">
-          <img src={img("hero.jpg")} alt="فساتين سمية في المشغل" />
+          <img src={img("hero.jpg")} alt="فساتين سميه في المشغل" />
           <div className="hero-caption">مجموعة المناسبات · تطريز لؤلؤي</div>
         </div>
       </section>
@@ -77,12 +77,12 @@ export function Home() {
 
       <section>
         <div className="container story">
-          <img src={img("about.jpg")} alt="فستان ذهبي مطرز من مجموعة سمية" />
+          <img src={img("about.jpg")} alt="فستان ذهبي مطرز من مجموعة سميه" />
           <div>
             <p className="eyebrow">من جديدة عرعر</p>
             <p className="quote">نؤمن أن الفستان الجميل يبدأ من اختيار هادئ، لا من ضجيج الموسم.</p>
             <p className="muted">
-              سمية دار محلية في جديدة عرعر، تختار فساتين السهرة والكاجوال والمناسبات بألوان وردية
+              سميه دار محلية في جديدة عرعر، تختار فساتين السهرة والكاجوال والمناسبات بألوان وردية
               وبيج وذهبية ناعمة. كل قطعة تبدأ من 600 ريال، وتُشحن بعناية إلى جميع مناطق المملكة.
             </p>
             <div className="stats">

@@ -36,11 +36,11 @@ export function Layout() {
       <a className="skip" href="#main">
         تخطي إلى المحتوى
       </a>
-      <div className="topbar">جديدة عرعر · شحن لكل المملكة · من 600 ر.س</div>
+      <div className="topbar">العنوان: جديدة عرعر · شحن لكل المملكة · من 600 ر.س</div>
       <header className="header">
         <div className="container header-row">
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
-            سمية
+            سميه
             <span>جديدة عرعر</span>
           </Link>
           <nav className="nav" aria-label="القائمة الرئيسية">
@@ -60,7 +60,7 @@ export function Layout() {
                 ))}
               </div>
             </div>
-            <NavLink to="/about">عن سمية</NavLink>
+            <NavLink to="/about">عن سميه</NavLink>
             <NavLink to="/contact">تواصل معنا</NavLink>
           </nav>
           <div className="header-actions">
@@ -83,7 +83,7 @@ export function Layout() {
             الرئيسية
           </NavLink>
           <NavLink to="/shop">المتجر</NavLink>
-          <NavLink to="/about">عن سمية</NavLink>
+          <NavLink to="/about">عن سميه</NavLink>
           <NavLink to="/contact">تواصل معنا</NavLink>
           <p className="eyebrow" style={{ marginTop: 18 }}>
             التصنيفات
@@ -104,7 +104,7 @@ export function Layout() {
         <div className="container footer-grid">
           <div>
             <div className="logo">
-              سمية
+              سميه
               <span>جديدة عرعر</span>
             </div>
             <p>دار فساتين أنثوية من جديدة عرعر. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
@@ -131,7 +131,7 @@ export function Layout() {
             <p>يومياً من 10 صباحاً حتى 10 مساءً</p>
           </div>
         </div>
-        <div className="container footer-bottom">© {new Date().getFullYear()} سمية — جديدة عرعر</div>
+        <div className="container footer-bottom">© {new Date().getFullYear()} سميه — جديدة عرعر</div>
       </footer>
 
       {open ? (
