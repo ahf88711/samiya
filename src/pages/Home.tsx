@@ -15,7 +15,7 @@ export function Home() {
           </p>
           <div className="hero-meta">
             <span>
-              الموقع <b>جديدة عرعر</b>
+              العنوان <b>جديدة عرعر</b>
             </span>
             <span>
               الأسعار من <b>600 ر.س</b>
