@@ -106,23 +106,25 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 76px;
+  min-height: 84px;
 }
 
 .logo {
   font-family: var(--display);
-  font-size: 38px;
-  line-height: 1;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 0.9;
   color: var(--ink);
 }
 
 .logo span {
   display: block;
   font-family: var(--font);
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   color: var(--rose-deep);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .nav {
@@ -253,10 +255,10 @@ button {
 
 .hero h1 {
   font-family: var(--display);
-  font-size: clamp(64px, 9vw, 120px);
-  font-weight: 400;
+  font-size: clamp(88px, 14vw, 150px);
+  font-weight: 700;
   margin: 0;
-  line-height: 0.95;
+  line-height: 0.9;
 }
 
 .hero-lead {
@@ -807,6 +809,7 @@ section {
 
 .footer .logo {
   color: #fff;
+  font-size: 48px;
 }
 
 .footer a {
@@ -940,11 +943,16 @@ section {
   }
 
   .header-row {
-    min-height: 60px;
+    min-height: 76px;
   }
 
   .logo {
-    font-size: 30px;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .logo span {
+    font-size: 12px;
   }
 
   .nav {
@@ -992,8 +1000,10 @@ section {
   }
 
   .hero h1 {
-    font-size: clamp(56px, 18vw, 84px);
+    font-size: clamp(92px, 26vw, 128px);
+    font-weight: 700;
     color: #fff;
+    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.35);
   }
 
   .hero-copy .eyebrow,
