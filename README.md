@@ -2,6 +2,9 @@
 
 متجر إلكتروني عربي بالكامل (RTL) لبيع الفساتين من **جديدة عرعر**.
 
+- الموقع الحي: https://ahf88711.github.io/samiya/
+- المستودع: https://github.com/ahf88711/samiya
+
 ## الموقع
 
 - الاسم: سمية
@@ -33,4 +36,14 @@ npm run preview
 
 ## النشر
 
-يُنشر الموقع تلقائياً على GitHub Pages عبر GitHub Actions عند الدفع إلى الفرع الرئيسي.
+الموقع منشور على GitHub Pages من فرع `gh-pages`:
+
+https://ahf88711.github.io/samiya/
+
+لتحديث النسخة المنشورة بعد تعديل المصدر:
+
+```bash
+GITHUB_ACTIONS=true npm run build
+```
+
+ثم انقل محتويات `dist/` إلى فرع `gh-pages`.
