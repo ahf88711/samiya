@@ -86,7 +86,7 @@ export function Layout() {
             الرئيسية
           </NavLink>
           <NavLink to="/shop">المتجر</NavLink>
-          <NavLink to="/about">عن سميه</NavLink>
+          <NavLink to="/about">عن المتجر</NavLink>
           <NavLink to="/contact">تواصل معنا</NavLink>
           <p className="eyebrow" style={{ marginTop: 18 }}>
             التصنيفات
