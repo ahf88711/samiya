@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { CATEGORIES, getProduct } from "../data";
 import { formatSar, img } from "../lib";
 import { useStore } from "../store";
@@ -11,6 +11,19 @@ export function Layout() {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    setMenu(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menu || open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menu, open]);
 
   const checkout = () => {
     beginCheckout();
@@ -23,7 +36,7 @@ export function Layout() {
       <a className="skip" href="#main">
         تخطي إلى المحتوى
       </a>
-      <div className="topbar">جديدة عرعر · شحن لجميع مناطق المملكة · الأسعار تبدأ من 600 ر.س</div>
+      <div className="topbar">جديدة عرعر · شحن لكل المملكة · من 600 ر.س</div>
       <header className="header">
         <div className="container header-row">
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
@@ -64,24 +77,22 @@ export function Layout() {
             </button>
           </div>
         </div>
-        <nav className={`mobile-nav container ${menu ? "open" : ""}`}>
-          <NavLink to="/" end onClick={() => setMenu(false)}>
+        <nav className={`mobile-nav ${menu ? "open" : ""}`} aria-label="قائمة الجوال">
+          <p className="eyebrow">القائمة</p>
+          <NavLink to="/" end>
             الرئيسية
           </NavLink>
-          <NavLink to="/shop" onClick={() => setMenu(false)}>
-            المتجر
-          </NavLink>
+          <NavLink to="/shop">المتجر</NavLink>
+          <NavLink to="/about">عن سمية</NavLink>
+          <NavLink to="/contact">تواصل معنا</NavLink>
+          <p className="eyebrow" style={{ marginTop: 18 }}>
+            التصنيفات
+          </p>
           {CATEGORIES.map((c) => (
-            <NavLink key={c.id} to={`/category/${c.id}`} onClick={() => setMenu(false)}>
+            <NavLink key={c.id} to={`/category/${c.id}`}>
               {c.name}
             </NavLink>
           ))}
-          <NavLink to="/about" onClick={() => setMenu(false)}>
-            عن سمية
-          </NavLink>
-          <NavLink to="/contact" onClick={() => setMenu(false)}>
-            تواصل معنا
-          </NavLink>
         </nav>
       </header>
 
@@ -194,8 +205,70 @@ export function Layout() {
         </>
       ) : null}
 
+      <nav className="tabbar" aria-label="تنقل الجوال">
+        <NavLink to="/" end>
+          <HomeIcon />
+          الرئيسية
+        </NavLink>
+        <NavLink to="/shop">
+          <ShopIcon />
+          المتجر
+        </NavLink>
+        <button type="button" className={open ? "active" : ""} onClick={() => setOpen(true)}>
+          <span className="tab-cart">
+            <CartIcon />
+            {cartCount > 0 ? <span className="badge">{cartCount}</span> : null}
+          </span>
+          السلة
+        </button>
+        <NavLink to="/contact">
+          <ChatIcon />
+          تواصل
+        </NavLink>
+      </nav>
+
       <Toasts items={toasts} />
     </>
+  );
+}
+
+function HomeIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ShopIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 8h14l-1.2 12H6.2L5 8Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+function ChatIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 18.5 6.4 15A7.5 7.5 0 1 1 12 19.5H7.2L5 18.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 

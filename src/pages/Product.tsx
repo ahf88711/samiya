@@ -80,7 +80,7 @@ export function Product() {
           <div className="qty-row">
             <QuantitySelector value={qty} onChange={setQty} />
           </div>
-          <div className="actions" style={{ marginTop: 18 }}>
+          <div className="actions pdp-actions" style={{ marginTop: 18 }}>
             <button className="btn btn-ghost" onClick={() => addToCart(item)}>
               أضف إلى السلة
             </button>
@@ -103,6 +103,20 @@ export function Product() {
         {relatedProducts(product).map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
+      </div>
+      <div className="pdp-bar">
+        <div>
+          <strong className="price">{formatSar(product.price)}</strong>
+          <div className="muted" style={{ fontSize: 12 }}>
+            الكمية {qty} · {size}
+          </div>
+        </div>
+        <button className="btn btn-ghost" onClick={() => addToCart(item)}>
+          السلة
+        </button>
+        <button className="btn btn-gold" onClick={buyNow}>
+          اطلب الآن
+        </button>
       </div>
     </div>
   );
