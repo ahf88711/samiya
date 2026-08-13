@@ -54,8 +54,8 @@ export function Layout() {
             <span />
           </button>
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
-            LOREVA
-            <span>لوريفا</span>
+            <b className="logo-en">LOREVA</b>
+            <span className="logo-ar">لوريفا</span>
           </Link>
           <div className="header-actions">
             <button className="icon-btn" onClick={() => setOpen(true)} aria-label="السلة">

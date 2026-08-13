@@ -163,15 +163,34 @@ button {
 }
 
 .logo {
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  grid-column: 2;
+  line-height: 0.95;
+  color: var(--ink);
+  animation: shimmer 4s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.logo-en,
+.hero h1 .logo-en {
   font-family: var(--brand);
   font-size: 72px;
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  justify-self: center;
-  grid-column: 2;
-  animation: shimmer 4s ease-in-out infinite;
+  letter-spacing: 0.12em;
+  font-style: normal;
+}
+
+.logo-ar,
+.hero h1 .logo-ar {
+  display: block;
+  font-family: var(--display);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--rose-deep);
+  margin-top: 2px;
 }
 
 .nav {
@@ -198,6 +217,10 @@ button {
   letter-spacing: 0.18em;
   color: var(--rose-deep);
   margin-top: 4px;
+}
+
+.logo .logo-ar {
+  font-size: 34px;
 }
 
 .footer-brand span {
@@ -1195,10 +1218,15 @@ section {
     grid-column: 2;
     justify-self: center;
     text-align: center;
-    font-size: clamp(40px, 14vw, 64px);
-    letter-spacing: 0.06em;
-    font-weight: 700;
-    letter-spacing: 0;
+  }
+
+  .logo-en {
+    font-size: clamp(36px, 13vw, 58px);
+    letter-spacing: 0.08em;
+  }
+
+  .logo-ar {
+    font-size: clamp(22px, 7vw, 30px);
   }
 
   .burger {
