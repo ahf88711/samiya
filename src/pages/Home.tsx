@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ContactInfo } from "../components/ContactInfo";
 import { ProductCard } from "../components/ui";
 import { CATEGORIES, featuredProducts } from "../data";
 import { img } from "../lib";
@@ -14,7 +15,7 @@ export function Home() {
           </p>
           <div className="hero-meta">
             <span>
-              العنوان <b>جديدة عرعر</b>
+              للتواصل <b>جديدة عرعر</b>
             </span>
             <span>
               الأسعار من <b>600 ر.س</b>
@@ -37,9 +38,7 @@ export function Home() {
 
       <section className="address-band">
         <div className="container address-card">
-          <p className="eyebrow">عنوان المحل</p>
-          <h2>جديدة عرعر</h2>
-          <p>منطقة الحدود الشمالية، المملكة العربية السعودية</p>
+          <ContactInfo />
         </div>
       </section>
 

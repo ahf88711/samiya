@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ContactInfo } from "../components/ContactInfo";
 import { img } from "../lib";
 
 export function About() {
@@ -36,17 +37,13 @@ export function Contact() {
     <div className="container" style={{ paddingBottom: 72 }}>
       <div className="page-title">
         <h1>تواصل معنا</h1>
-        <p>يسعدنا سماعك من جديدة عرعر ومن كل المملكة.</p>
+        <p>العنوان والجوال والبريد في مكان واحد.</p>
       </div>
       <div className="contact-grid">
         <div className="info-box">
-          <h3>عنوان المحل</h3>
-          <p className="store-address">جديدة عرعر</p>
-          <p>منطقة الحدود الشمالية، المملكة العربية السعودية</p>
+          <ContactInfo />
           <h3>أوقات العمل</h3>
           <p>يومياً من الساعة 10 صباحاً حتى 10 مساءً</p>
-          <h3>الطلب</h3>
-          <p>اطلبي عبر الموقع: الكمية ثم العنوان ثم الدفع. الشحن مجاني داخل عرعر وجديدة عرعر.</p>
         </div>
         {sent ? (
           <div className="card">

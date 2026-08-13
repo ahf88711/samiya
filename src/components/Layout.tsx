@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { STORE_CONTACT } from "../contact";
 import { CATEGORIES, getProduct } from "../data";
 import { formatSar, img } from "../lib";
 import { useStore } from "../store";
+import { ContactInfo } from "./ContactInfo";
 import { Toasts } from "./ui";
 
 export function Layout() {
@@ -36,7 +38,9 @@ export function Layout() {
       <a className="skip" href="#main">
         تخطي إلى المحتوى
       </a>
-      <div className="topbar">العنوان: جديدة عرعر · شحن لكل المملكة · من 600 ر.س</div>
+      <div className="topbar">
+        للتواصل: {STORE_CONTACT.address} · {STORE_CONTACT.phoneDisplay} · {STORE_CONTACT.email}
+      </div>
       <header className="header">
         <div className="container header-row">
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
@@ -120,11 +124,8 @@ export function Layout() {
             <Link to="/shop">كل الفساتين</Link>
           </div>
           <div>
-            <h4>العنوان</h4>
-            <p>جديدة عرعر</p>
-            <p>منطقة الحدود الشمالية</p>
-            <p>المملكة العربية السعودية</p>
-            <p>يومياً من 10 صباحاً حتى 10 مساءً</p>
+            <h4>للتواصل</h4>
+            <ContactInfo compact />
           </div>
         </div>
         <div className="container footer-bottom">© {new Date().getFullYear()} سميه — جديدة عرعر</div>

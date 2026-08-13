@@ -622,6 +622,39 @@ section {
   margin: 4px 0 8px;
 }
 
+.contact-block,
+.contact-lines {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-block p,
+.contact-lines p {
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.contact-block span,
+.contact-lines span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-block strong,
+.contact-block a,
+.contact-lines strong,
+.contact-lines a {
+  color: inherit;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact-block .btn {
+  justify-self: start;
+  margin-top: 6px;
+}
+
 .size-row,
 .qty-row {
   display: flex;
