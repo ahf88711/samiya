@@ -8,7 +8,10 @@ export function About() {
     <div className="container" style={{ paddingBottom: 72 }}>
       <div className="page-title">
         <p className="eyebrow">قصتنا</p>
-        <h1>LOREVA</h1>
+        <h1>
+          LOREVA
+          <span>لوريفا</span>
+        </h1>
         <p>دار صغيرة بذوق كبير، تختار الفستان كما تُختار الهدية.</p>
       </div>
       <div className="story">

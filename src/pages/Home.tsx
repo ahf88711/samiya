@@ -9,7 +9,10 @@ export function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>LOREVA</h1>
+          <h1>
+            LOREVA
+            <span>لوريفا</span>
+          </h1>
           <p className="hero-lead">
             فساتين أنيقة بروح أنثوية ناعمة، تُختار بعناية للنساء اللواتي يحببن الحضور الهادئ والفخم.
           </p>

@@ -186,14 +186,23 @@ button {
   justify-self: end;
 }
 
-.logo span {
+.logo span,
+.hero h1 span,
+.page-title h1 span,
+.footer-brand span,
+.side-menu-head .footer-brand span {
   display: block;
-  font-family: var(--font);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--display);
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   color: var(--rose-deep);
   margin-top: 4px;
+}
+
+.footer-brand span {
+  color: var(--gold-soft);
+  font-size: 0.45em;
 }
 
 .linkish {
@@ -1186,7 +1195,7 @@ section {
     grid-column: 2;
     justify-self: center;
     text-align: center;
-    font-size: clamp(44px, 15vw, 68px);
+    font-size: clamp(40px, 14vw, 64px);
     letter-spacing: 0.06em;
     font-weight: 700;
     letter-spacing: 0;

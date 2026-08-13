@@ -55,6 +55,7 @@ export function Layout() {
           </button>
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
             LOREVA
+            <span>لوريفا</span>
           </Link>
           <div className="header-actions">
             <button className="icon-btn" onClick={() => setOpen(true)} aria-label="السلة">
@@ -67,7 +68,10 @@ export function Layout() {
       {menu ? <div className="overlay menu-overlay" onClick={() => setMenu(false)} /> : null}
       <nav className={`side-menu ${menu ? "open" : ""}`} aria-label="قائمة الموقع">
         <div className="side-menu-head">
-          <strong className="footer-brand">LOREVA</strong>
+          <strong className="footer-brand">
+            LOREVA
+            <span>لوريفا</span>
+          </strong>
           <button className="icon-btn" onClick={() => setMenu(false)} aria-label="إغلاق">
             ×
           </button>
@@ -92,7 +96,10 @@ export function Layout() {
       <footer className="footer">
         <div className="container footer-grid">
           <div>
-            <div className="footer-brand">LOREVA</div>
+            <div className="footer-brand">
+              LOREVA
+              <span>لوريفا</span>
+            </div>
             <p>دار فساتين أنثوية. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
           </div>
           <div>
