@@ -208,7 +208,7 @@ export function AddressPage() {
 }
 
 export function PaymentPage() {
-  const { address, placeOrder } = useStore();
+  const { address, placeOrder, lastOrder } = useStore();
   const { items, lines, subtotal } = useLines();
   const navigate = useNavigate();
   const [method, setMethod] = useState<PaymentMethod>("cod");
@@ -216,6 +216,7 @@ export function PaymentPage() {
   const [error, setError] = useState("");
   const ship = shippingFee(address.city);
 
+  if (lastOrder && !items.length) return <Navigate to={`/order/${lastOrder.id}`} replace />;
   if (!items.length) return <Navigate to="/cart" replace />;
   if (!address.name || !address.street) return <Navigate to="/checkout/address" replace />;
 
