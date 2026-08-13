@@ -63,7 +63,7 @@ export const CATEGORIES: Category[] = [
   {
     id: "new",
     name: "وصل حديثاً",
-    description: "أحدث إضافات سميه لهذا الموسم",
+    description: "أحدث إضافات LOREVA لهذا الموسم",
     image: "cat-new.jpg",
   },
 ];

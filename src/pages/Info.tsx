@@ -8,14 +8,14 @@ export function About() {
     <div className="container" style={{ paddingBottom: 72 }}>
       <div className="page-title">
         <p className="eyebrow">قصتنا</p>
-        <h1>سميه</h1>
+        <h1>LOREVA</h1>
         <p>دار صغيرة بذوق كبير، تختار الفستان كما تُختار الهدية.</p>
       </div>
       <div className="story">
         <img src={img("look.jpg")} alt="أجواء الدار بألوان بيج ناعمة" />
         <div>
           <p>
-            وُلدت سميه في جديدة عرعر لتكون عنواناً واضحاً للأناقة الأنثوية: وردي ناعم، بيج دافئ،
+            وُلدت LOREVA في جديدة عرعر لتكون عنواناً واضحاً للأناقة الأنثوية: وردي ناعم، بيج دافئ،
             وأبيض مضيء، مع لمسات ذهبية خفيفة. لا نطارد كل صيحة، بل نختار ما يبقى جميلاً بعد الموسم.
           </p>
           <p className="muted">
@@ -48,7 +48,7 @@ export function Contact() {
         {sent ? (
           <div className="card">
             <h3>وصلنا رسالتك</h3>
-            <p>شكراً لتواصلك مع سميه. سنعود إليك في أقرب وقت.</p>
+            <p>شكراً لتواصلك مع LOREVA. سنعود إليك في أقرب وقت.</p>
           </div>
         ) : (
           <form
@@ -84,7 +84,7 @@ export function Shipping() {
   return (
     <div className="container" style={{ paddingBottom: 72 }}>
       <div className="page-title">
-        <p className="eyebrow">خدمة سميه</p>
+        <p className="eyebrow">خدمة LOREVA</p>
         <h1>الشحن والتوصيل</h1>
         <p>نوصل طلبك داخل المملكة بعد تأكيد العنوان والدفع.</p>
       </div>

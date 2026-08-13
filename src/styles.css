@@ -15,6 +15,7 @@
   --radius: 22px;
   --font: "Cairo", "Segoe UI", Tahoma, sans-serif;
   --display: "Amiri", "Noto Naskh Arabic", serif;
+  --brand: "Playfair Display", "Times New Roman", serif;
 }
 
 @keyframes fadeUp {
@@ -162,10 +163,11 @@ button {
 }
 
 .logo {
-  font-family: var(--display);
-  font-size: 86px;
+  font-family: var(--brand);
+  font-size: 72px;
   font-weight: 700;
-  line-height: 0.82;
+  line-height: 0.9;
+  letter-spacing: 0.08em;
   color: var(--ink);
   justify-self: center;
   grid-column: 2;
@@ -389,11 +391,12 @@ button {
 }
 
 .hero h1 {
-  font-family: var(--display);
-  font-size: clamp(88px, 14vw, 150px);
+  font-family: var(--brand);
+  font-size: clamp(72px, 12vw, 140px);
   font-weight: 700;
   margin: 0;
-  line-height: 0.9;
+  line-height: 0.95;
+  letter-spacing: 0.1em;
 }
 
 .hero-lead {
@@ -1029,10 +1032,11 @@ section {
 }
 
 .footer-brand {
-  font-family: var(--display);
+  font-family: var(--brand);
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
+  letter-spacing: 0.08em;
   color: #fff;
 }
 
@@ -1182,7 +1186,8 @@ section {
     grid-column: 2;
     justify-self: center;
     text-align: center;
-    font-size: clamp(56px, 18vw, 78px);
+    font-size: clamp(44px, 15vw, 68px);
+    letter-spacing: 0.06em;
     font-weight: 700;
     letter-spacing: 0;
   }

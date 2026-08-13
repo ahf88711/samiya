@@ -238,7 +238,7 @@ export function PaymentPage() {
       <Stepper step={3} />
       <div className="page-title">
         <h1>الدفع</h1>
-        <p>اختاري طريقة الدفع لإكمال طلبك من سميه.</p>
+        <p>اختاري طريقة الدفع لإكمال طلبك من LOREVA.</p>
       </div>
       <div className="two-col" style={{ paddingBottom: 64 }}>
         <form className="card" onSubmit={pay}>

@@ -54,7 +54,7 @@ export function Layout() {
             <span />
           </button>
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
-            سميه
+            LOREVA
           </Link>
           <div className="header-actions">
             <button className="icon-btn" onClick={() => setOpen(true)} aria-label="السلة">
@@ -67,7 +67,7 @@ export function Layout() {
       {menu ? <div className="overlay menu-overlay" onClick={() => setMenu(false)} /> : null}
       <nav className={`side-menu ${menu ? "open" : ""}`} aria-label="قائمة الموقع">
         <div className="side-menu-head">
-          <strong className="footer-brand">سميه</strong>
+          <strong className="footer-brand">LOREVA</strong>
           <button className="icon-btn" onClick={() => setMenu(false)} aria-label="إغلاق">
             ×
           </button>
@@ -92,7 +92,7 @@ export function Layout() {
       <footer className="footer">
         <div className="container footer-grid">
           <div>
-            <div className="footer-brand">سميه</div>
+            <div className="footer-brand">LOREVA</div>
             <p>دار فساتين أنثوية. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
           </div>
           <div>
@@ -115,7 +115,7 @@ export function Layout() {
             <ContactInfo compact />
           </div>
         </div>
-        <div className="container footer-bottom">© {new Date().getFullYear()} سميه — جديدة عرعر</div>
+        <div className="container footer-bottom">© {new Date().getFullYear()} LOREVA — جديدة عرعر</div>
       </footer>
 
       {open ? (

@@ -9,7 +9,7 @@ export function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>سميه</h1>
+          <h1>LOREVA</h1>
           <p className="hero-lead">
             فساتين أنيقة بروح أنثوية ناعمة، تُختار بعناية للنساء اللواتي يحببن الحضور الهادئ والفخم.
           </p>
@@ -31,7 +31,7 @@ export function Home() {
           </div>
         </div>
         <div className="hero-visual">
-          <img src={img("hero.jpg")} alt="فساتين سميه في المشغل" />
+          <img src={img("hero.jpg")} alt="فساتين LOREVA في المشغل" />
           <div className="hero-caption">مجموعة المناسبات · تطريز لؤلؤي</div>
         </div>
       </section>
@@ -83,11 +83,11 @@ export function Home() {
 
       <section>
         <div className="container story">
-          <img src={img("about.jpg")} alt="فستان ذهبي مطرز من مجموعة سميه" />
+          <img src={img("about.jpg")} alt="فستان ذهبي مطرز من مجموعة LOREVA" />
           <div>
             <p className="quote">نؤمن أن الفستان الجميل يبدأ من اختيار هادئ، لا من ضجيج الموسم.</p>
             <p className="muted">
-              سميه دار فساتين تختار قطع السهرة والكاجوال والمناسبات بألوان وردية وبيج وذهبية ناعمة.
+              LOREVA دار فساتين تختار قطع السهرة والكاجوال والمناسبات بألوان وردية وبيج وذهبية ناعمة.
               كل قطعة تبدأ من 600 ريال، وتُشحن بعناية إلى جميع مناطق المملكة.
             </p>
             <div className="stats">

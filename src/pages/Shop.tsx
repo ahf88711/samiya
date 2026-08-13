@@ -9,7 +9,7 @@ import {
 } from "../data";
 
 export function Shop() {
-  return <Catalog title="المتجر" subtitle="كل فساتين سميه في مكان واحد" products={PRODUCTS} />;
+  return <Catalog title="المتجر" subtitle="كل فساتين LOREVA في مكان واحد" products={PRODUCTS} />;
 }
 
 export function Category() {
@@ -47,7 +47,7 @@ function Catalog({
   return (
     <div className="container">
       <div className="page-title">
-        <p className="eyebrow">سميه</p>
+        <p className="eyebrow">LOREVA</p>
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>
