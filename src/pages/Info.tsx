@@ -7,7 +7,7 @@ export function About() {
     <div className="container" style={{ paddingBottom: 72 }}>
       <div className="page-title">
         <p className="eyebrow">قصتنا</p>
-        <h1>سميه من جديدة عرعر</h1>
+        <h1>سميه</h1>
         <p>دار صغيرة بذوق كبير، تختار الفستان كما تُختار الهدية.</p>
       </div>
       <div className="story">

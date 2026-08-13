@@ -41,7 +41,6 @@ export function Layout() {
         <div className="container header-row">
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
             سميه
-            <span>جديدة عرعر</span>
           </Link>
           <nav className="nav" aria-label="القائمة الرئيسية">
             <NavLink to="/" end>
@@ -60,7 +59,7 @@ export function Layout() {
                 ))}
               </div>
             </div>
-            <NavLink to="/about">عن سميه</NavLink>
+            <NavLink to="/about">عن المتجر</NavLink>
             <NavLink to="/contact">تواصل معنا</NavLink>
           </nav>
           <div className="header-actions">
@@ -103,11 +102,8 @@ export function Layout() {
       <footer className="footer">
         <div className="container footer-grid">
           <div>
-            <div className="logo">
-              سميه
-              <span>جديدة عرعر</span>
-            </div>
-            <p>دار فساتين أنثوية من جديدة عرعر. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
+            <div className="logo">سميه</div>
+            <p>دار فساتين أنثوية. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
           </div>
           <div>
             <h4>تسوّقي</h4>
