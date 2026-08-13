@@ -106,7 +106,7 @@ export function Layout() {
       <footer className="footer">
         <div className="container footer-grid">
           <div>
-            <div className="logo">سميه</div>
+            <div className="footer-brand">سميه</div>
             <p>دار فساتين أنثوية. قطع مختارة بعناية للمساء واليوم والمناسبات.</p>
           </div>
           <div>
