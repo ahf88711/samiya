@@ -80,6 +80,29 @@ export function Contact() {
   );
 }
 
+export function Shipping() {
+  return (
+    <div className="container" style={{ paddingBottom: 72 }}>
+      <div className="page-title">
+        <p className="eyebrow">خدمة سميه</p>
+        <h1>الشحن والتوصيل</h1>
+        <p>نوصل طلبك داخل المملكة بعد تأكيد العنوان والدفع.</p>
+      </div>
+      <div className="card" style={{ maxWidth: 640 }}>
+        <p>
+          الشحن مجاني إلى <strong>جديدة عرعر</strong> ومدينة عرعر. بقية المناطق برسوم رمزية تُحسب
+          عند إدخال عنوان التوصيل.
+        </p>
+        <p>مدة التوصيل عادة من يومين إلى خمسة أيام عمل حسب المدينة.</p>
+        <p>يمكنكِ متابعة الطلب عبر رقم الجوال أو البريد الظاهر في صفحة التواصل.</p>
+        <Link className="btn btn-primary" to="/shop">
+          تسوّقي الآن
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export function NotFound() {
   return (
     <div className="container empty">

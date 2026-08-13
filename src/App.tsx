@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { AddressPage, CartPage, PaymentPage, SuccessPage } from "./pages/Checkout";
 import { Home } from "./pages/Home";
-import { About, Contact, NotFound } from "./pages/Info";
+import { About, Contact, NotFound, Shipping } from "./pages/Info";
 import { Product } from "./pages/Product";
 import { Category, Shop } from "./pages/Shop";
 import { StoreProvider } from "./store";
@@ -24,6 +24,7 @@ export default function App() {
             <Route path="order/:id" element={<SuccessPage />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="shipping" element={<Shipping />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

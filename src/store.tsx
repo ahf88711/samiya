@@ -163,7 +163,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       total: subtotal + shipping,
       createdAt: new Date().toISOString(),
     };
-    const prev = JSON.parse(localStorage.getItem("samiya-orders") || "[]") as Order[];
+    let prev: Order[] = [];
+    try {
+      prev = JSON.parse(localStorage.getItem("samiya-orders") || "[]") as Order[];
+      if (!Array.isArray(prev)) prev = [];
+    } catch {
+      prev = [];
+    }
     localStorage.setItem("samiya-orders", JSON.stringify([order, ...prev]));
     setLastOrder(order);
     if (!checkoutItems.length || items === cart) clearCart();

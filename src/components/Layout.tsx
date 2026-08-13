@@ -44,11 +44,14 @@ export function Layout() {
       <header className="header">
         <div className="container header-row">
           <button
-            className="icon-btn burger"
+            className={`icon-btn burger ${menu ? "is-open" : ""}`}
             onClick={() => setMenu((v) => !v)}
-            aria-label="القائمة"
+            aria-label={menu ? "إغلاق القائمة" : "فتح القائمة"}
+            aria-expanded={menu}
           >
-            ☰
+            <span />
+            <span />
+            <span />
           </button>
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
             سميه
@@ -59,45 +62,28 @@ export function Layout() {
               {cartCount > 0 ? <span className="badge">{cartCount}</span> : null}
             </button>
           </div>
-          <nav className="nav" aria-label="القائمة الرئيسية">
-            <NavLink to="/" end>
-              الرئيسية
-            </NavLink>
-            <NavLink to="/shop">المتجر</NavLink>
-            <div className="drop">
-              <button className="linkish" type="button">
-                التصنيفات
-              </button>
-              <div className="drop-menu">
-                {CATEGORIES.map((c) => (
-                  <Link key={c.id} to={`/category/${c.id}`}>
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <NavLink to="/about">عن المتجر</NavLink>
-            <NavLink to="/contact">تواصل معنا</NavLink>
-          </nav>
         </div>
-        <nav className={`mobile-nav ${menu ? "open" : ""}`} aria-label="قائمة الجوال">
-          <p className="eyebrow">القائمة</p>
-          <NavLink to="/" end>
-            الرئيسية
-          </NavLink>
-          <NavLink to="/shop">المتجر</NavLink>
-          <NavLink to="/about">عن المتجر</NavLink>
-          <NavLink to="/contact">تواصل معنا</NavLink>
-          <p className="eyebrow" style={{ marginTop: 18 }}>
-            التصنيفات
-          </p>
-          {CATEGORIES.map((c) => (
-            <NavLink key={c.id} to={`/category/${c.id}`}>
-              {c.name}
-            </NavLink>
-          ))}
-        </nav>
       </header>
+      {menu ? <div className="overlay menu-overlay" onClick={() => setMenu(false)} /> : null}
+      <nav className={`side-menu ${menu ? "open" : ""}`} aria-label="قائمة الموقع">
+        <div className="side-menu-head">
+          <strong className="footer-brand">سميه</strong>
+          <button className="icon-btn" onClick={() => setMenu(false)} aria-label="إغلاق">
+            ×
+          </button>
+        </div>
+        <NavLink to="/" end>
+          الرئيسية
+        </NavLink>
+        <NavLink to="/shop">المنتجات</NavLink>
+        <NavLink to="/about">من نحن</NavLink>
+        <NavLink to="/contact">التواصل</NavLink>
+        <p className="eyebrow">المزيد</p>
+        <NavLink to="/category/new">وصل حديثاً</NavLink>
+        <NavLink to="/category/evening">فساتين السهرة</NavLink>
+        <NavLink to="/cart">السلة</NavLink>
+        <NavLink to="/shipping">الشحن والتوصيل</NavLink>
+      </nav>
 
       <main id="main">
         <Outlet />
@@ -119,9 +105,10 @@ export function Layout() {
           </div>
           <div>
             <h4>الدار</h4>
-            <Link to="/about">قصتنا</Link>
-            <Link to="/contact">تواصل معنا</Link>
-            <Link to="/shop">كل الفساتين</Link>
+            <Link to="/about">من نحن</Link>
+            <Link to="/contact">التواصل</Link>
+            <Link to="/shop">المنتجات</Link>
+            <Link to="/shipping">الشحن والتوصيل</Link>
           </div>
           <div>
             <h4>للتواصل</h4>

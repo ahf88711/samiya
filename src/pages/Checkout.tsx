@@ -325,12 +325,15 @@ export function PaymentPage() {
 export function SuccessPage() {
   const { lastOrder } = useStore();
   const { id } = useParams();
-  const order =
-    lastOrder && lastOrder.id === id
-      ? lastOrder
-      : (JSON.parse(localStorage.getItem("samiya-orders") || "[]") as Order[]).find(
-          (o) => o.id === id,
-        );
+  const stored = (() => {
+    try {
+      const raw = JSON.parse(localStorage.getItem("samiya-orders") || "[]") as Order[];
+      return Array.isArray(raw) ? raw : [];
+    } catch {
+      return [] as Order[];
+    }
+  })();
+  const order = lastOrder && lastOrder.id === id ? lastOrder : stored.find((o) => o.id === id);
 
   if (!order) return <Navigate to="/" replace />;
 

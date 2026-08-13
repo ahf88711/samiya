@@ -1,20 +1,60 @@
 :root {
-  --cream: #fbf6f0;
-  --blush: #f6e4e8;
-  --rose: #e8b4bc;
-  --rose-deep: #c17b88;
-  --beige: #e8d8c8;
-  --sand: #d9c4ae;
-  --gold: #c6a46a;
-  --gold-soft: #e8d5a3;
-  --ink: #3a2a2c;
-  --muted: #7a6568;
-  --line: rgba(58, 42, 44, 0.12);
-  --white: #fffbfa;
-  --shadow: 0 22px 50px rgba(58, 42, 44, 0.08);
+  --cream: #fff4f0;
+  --blush: #f7c9d4;
+  --rose: #e36b88;
+  --rose-deep: #b83358;
+  --beige: #f3dcc8;
+  --sand: #e2c19f;
+  --gold: #d4a017;
+  --gold-soft: #f3d27a;
+  --ink: #3a1524;
+  --muted: #8a5464;
+  --line: rgba(184, 51, 88, 0.16);
+  --white: #fffaf8;
+  --shadow: 0 18px 40px rgba(184, 51, 88, 0.12);
   --radius: 22px;
   --font: "Cairo", "Segoe UI", Tahoma, sans-serif;
   --display: "Amiri", "Noto Naskh Arabic", serif;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 8px 16px rgba(212, 160, 23, 0.35));
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }
 
 * {
@@ -93,8 +133,10 @@ button {
 
 /* Header */
 .topbar {
-  background: var(--ink);
-  color: var(--gold-soft);
+  background: linear-gradient(90deg, #4a1830, #b83358, #d4a017, #b83358, #4a1830);
+  background-size: 200% 100%;
+  animation: shine 10s linear infinite;
+  color: #fff8e8;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -127,6 +169,7 @@ button {
   color: var(--ink);
   justify-self: center;
   grid-column: 2;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
 .nav {
@@ -244,7 +287,81 @@ button {
 }
 
 .burger {
-  display: none;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  z-index: 52;
+}
+
+.burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 99px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.burger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.side-menu {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 51;
+  width: min(320px, 86vw);
+  height: 100dvh;
+  background: linear-gradient(180deg, #fffaf8, #f7c9d4);
+  box-shadow: var(--shadow);
+  transform: translateX(110%);
+  transition: transform 0.32s ease;
+  padding: 22px 20px 100px;
+  overflow: auto;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+
+.side-menu.open {
+  transform: translateX(0);
+}
+
+.side-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.side-menu-head .footer-brand {
+  color: var(--ink);
+  font-size: 42px;
+}
+
+.side-menu a {
+  padding: 13px 14px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.side-menu a.active,
+.side-menu a:hover {
+  background: rgba(184, 51, 88, 0.12);
+  color: var(--rose-deep);
+}
+
+.menu-overlay {
+  z-index: 50;
 }
 
 /* Hero */
@@ -349,8 +466,10 @@ button {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, #d8b56d, #b89045);
+  background: linear-gradient(135deg, #f3d27a, #d4a017, #b8840c);
   color: #2c2114;
+  background-size: 180% 180%;
+  animation: shine 4s linear infinite;
 }
 
 .btn-ghost {
@@ -415,6 +534,26 @@ section {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.cat-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.cat-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.product-card:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.product-card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.product-card:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
 .product-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -425,6 +564,7 @@ section {
   border-radius: var(--radius);
   min-height: 280px;
   color: white;
+  animation: fadeUp 0.6s ease both;
 }
 
 .cat-card img {
@@ -458,10 +598,11 @@ section {
   box-shadow: 0 10px 30px rgba(58, 42, 44, 0.04);
   border: 1px solid var(--line);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeUp 0.55s ease both;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow);
 }
 
@@ -1494,5 +1635,14 @@ section {
 
   .hero-visual {
     min-height: 52svh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
