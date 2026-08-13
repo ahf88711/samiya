@@ -36,6 +36,14 @@ export function Home() {
         </div>
       </section>
 
+      <section className="address-band">
+        <div className="container address-card">
+          <p className="eyebrow">عنوان المحل</p>
+          <h2>جديدة عرعر</h2>
+          <p>منطقة الحدود الشمالية، المملكة العربية السعودية</p>
+        </div>
+      </section>
+
       <section>
         <div className="container">
           <div className="section-head">

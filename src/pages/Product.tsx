@@ -58,6 +58,7 @@ export function Product() {
           ) : null}
         </div>
         <div>
+          <p className="eyebrow">{cat?.name}</p>
           {product.isNew ? <span className="pill">وصل حديثاً</span> : null}
           <h1>{product.name}</h1>
           <div className="price" style={{ fontSize: 26 }}>

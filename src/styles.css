@@ -591,6 +591,35 @@ section {
 
 .pdp .lead {
   color: var(--muted);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.address-band {
+  padding: 12px 0 8px;
+}
+
+.address-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 24px;
+  text-align: center;
+}
+
+.address-card h2 {
+  font-family: var(--display);
+  font-size: clamp(36px, 7vw, 52px);
+  font-weight: 700;
+  margin: 4px 0 8px;
+}
+
+.store-address {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 4px 0 8px;
 }
 
 .size-row,
@@ -1368,6 +1397,14 @@ section {
 
   .empty {
     padding: 40px 12px 100px;
+  }
+
+  .address-band {
+    padding: 8px 0 0;
+  }
+
+  .address-card {
+    padding: 18px 16px;
   }
 }
 

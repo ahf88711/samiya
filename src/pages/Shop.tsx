@@ -47,7 +47,7 @@ function Catalog({
   return (
     <div className="container">
       <div className="page-title">
-        <p className="eyebrow">سميه · جديدة عرعر</p>
+        <p className="eyebrow">سميه</p>
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>
