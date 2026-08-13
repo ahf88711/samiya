@@ -43,9 +43,22 @@ export function Layout() {
       </div>
       <header className="header">
         <div className="container header-row">
+          <button
+            className="icon-btn burger"
+            onClick={() => setMenu((v) => !v)}
+            aria-label="القائمة"
+          >
+            ☰
+          </button>
           <Link to="/" className="logo" onClick={() => setMenu(false)}>
             سميه
           </Link>
+          <div className="header-actions">
+            <button className="icon-btn" onClick={() => setOpen(true)} aria-label="السلة">
+              <CartIcon />
+              {cartCount > 0 ? <span className="badge">{cartCount}</span> : null}
+            </button>
+          </div>
           <nav className="nav" aria-label="القائمة الرئيسية">
             <NavLink to="/" end>
               الرئيسية
@@ -66,19 +79,6 @@ export function Layout() {
             <NavLink to="/about">عن المتجر</NavLink>
             <NavLink to="/contact">تواصل معنا</NavLink>
           </nav>
-          <div className="header-actions">
-            <button className="icon-btn" onClick={() => setOpen(true)} aria-label="السلة">
-              <CartIcon />
-              {cartCount > 0 ? <span className="badge">{cartCount}</span> : null}
-            </button>
-            <button
-              className="icon-btn burger"
-              onClick={() => setMenu((v) => !v)}
-              aria-label="القائمة"
-            >
-              ☰
-            </button>
-          </div>
         </div>
         <nav className={`mobile-nav ${menu ? "open" : ""}`} aria-label="قائمة الجوال">
           <p className="eyebrow">القائمة</p>
